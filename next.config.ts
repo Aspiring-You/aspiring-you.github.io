@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // ─── Static export for GitHub Pages ───
+  output: "export",
+  trailingSlash: true,
+
+  // ─── No basePath needed for org/user pages (aspiring-you.github.io) ───
+  // basePath: "",  // leave empty — site lives at root
+
   images: {
+    // next/image optimisation is unavailable in static export.
+    // We use unoptimized so <Image> still renders correctly.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -9,11 +19,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Enable static export for GitHub Pages deployment
-  // Uncomment the lines below when deploying to GitHub Pages:
-  // output: "export",
-  // trailingSlash: true,
-  // basePath: "/aspiring-you",
 };
 
 export default nextConfig;

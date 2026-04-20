@@ -1,0 +1,68 @@
+name: Deploy Aspiring You to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main          # triggers on every push to main
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
+# ── Permissions required by the modern GitHub Pages deploy action ──
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ── Prevent overlapping deployments; finish the current one first ──
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # ────────────────────────────────────────────────
+  # JOB 1 – Build the Next.js static export
+  # ────────────────────────────────────────────────
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+        # Produces the `out/` directory (static HTML/CSS/JS)
+
+      - name: Add .nojekyll (prevents GitHub stripping _ prefixed files)
+        run: touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out   # the folder Next.js writes static files to
+
+  # ────────────────────────────────────────────────
+  # JOB 2 – Deploy the artifact to GitHub Pages
+  # ────────────────────────────────────────────────
+  deploy:
+    name: Deploy
+    needs: build          # only runs after build succeeds
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
