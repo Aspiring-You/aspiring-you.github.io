@@ -60,11 +60,11 @@ export default function AboutPage() {
       {/* Hero */}
       <section style={{
         background: "linear-gradient(135deg, #0d0e2c, #1a1b5e)",
-        padding: "9rem 0 6rem",
+        padding: "8rem 0 5rem",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-      }}>
+      }} className="about-hero">
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           backgroundImage: "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -145,7 +145,8 @@ export default function AboutPage() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 900px) { .who-we-are-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 900px) { .who-we-are-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; } }
+          @media (max-width: 768px) { .about-hero { padding: 7rem 0 4rem !important; } }
         `}</style>
       </section>
 

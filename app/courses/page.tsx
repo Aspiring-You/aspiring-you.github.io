@@ -33,7 +33,7 @@ export default function CoursesPage() {
         background: "linear-gradient(135deg, #0d0e2c, #1a1b5e)",
         padding: "8rem 0 5rem",
         textAlign: "center",
-      }}>
+      }} className="courses-hero">
         <div className="container">
           <div className="section-badge" style={{ background: "rgba(255,255,255,0.08)", color: "#a5b4fc", borderColor: "rgba(165,180,252,0.25)", margin: "0 auto 1rem" }}>
             All Courses
@@ -70,13 +70,16 @@ export default function CoursesPage() {
             />
           </div>
         </div>
+        <style>{`
+          @media (max-width: 768px) { .courses-hero { padding: 7rem 0 3.5rem !important; } }
+        `}</style>
       </section>
 
       {/* Filters + Grid */}
       <section className="section" style={{ background: "var(--bg-light)" }}>
         <div className="container">
           {/* Filter Row */}
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "2.5rem", alignItems: "center" }}>
+          <div className="filter-row" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "2.5rem", alignItems: "center" }}>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", flex: 1 }}>
               {categories.map((cat) => (
                 <button
@@ -104,6 +107,7 @@ export default function CoursesPage() {
             <select
               value={level}
               onChange={(e) => setLevel(e.target.value)}
+              className="level-select"
               style={{
                 padding: "0.55rem 1rem",
                 borderRadius: "50px",
@@ -120,6 +124,12 @@ export default function CoursesPage() {
               {levels.map((l) => <option key={l}>{l}</option>)}
             </select>
           </div>
+          <style>{`
+            @media (max-width: 640px) {
+              .filter-row { flex-direction: column !important; align-items: stretch !important; }
+              .level-select { width: 100% !important; border-radius: 10px !important; }
+            }
+          `}</style>
 
           {/* Result count */}
           <div style={{ marginBottom: "1.5rem" }}>

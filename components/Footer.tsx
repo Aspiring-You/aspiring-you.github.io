@@ -90,8 +90,8 @@ export function Footer() {
           padding: "3rem 0",
         }}
       >
-        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-          <div>
+        <div className="container footer-cta" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
+          <div className="footer-cta-text">
             <h3 style={{ color: "#fff", fontSize: "clamp(1.3rem, 3vw, 1.8rem)", fontWeight: 700, marginBottom: "0.5rem" }}>
               Ready to Transform Your Career?
             </h3>
@@ -99,7 +99,7 @@ export function Footer() {
               Join 50,000+ learners already growing with Aspiring You.
             </p>
           </div>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+          <div className="footer-cta-btns" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link href="/courses" className="btn btn-white">
               Explore Courses
             </Link>
@@ -233,6 +233,11 @@ export function Footer() {
       <style>{`
         @media (max-width: 900px) {
           .footer-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .footer-cta { flex-direction: column !important; align-items: flex-start !important; }
+          .footer-cta-btns { width: 100%; }
+          .footer-cta-btns .btn { flex: 1; justify-content: center; }
         }
         @media (max-width: 560px) {
           .footer-grid { grid-template-columns: 1fr !important; }
