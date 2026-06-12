@@ -158,9 +158,9 @@ export default function CoursesPage() {
                   {course.badge && (
                     <span style={{
                       position: "absolute", top: "0.75rem", left: "0.75rem",
-                      background: course.badgeColor, color: "#fff",
+                      background: "rgba(255, 255, 255, 0.95)", border: `1px solid ${course.badgeColor}`, color: course.badgeColor,
                       fontSize: "0.72rem", fontWeight: 700, padding: "0.25rem 0.65rem",
-                      borderRadius: "50px", textTransform: "uppercase",
+                      borderRadius: "50px", textTransform: "uppercase", letterSpacing: "0.04em",
                     }}>
                       {course.badge}
                     </span>

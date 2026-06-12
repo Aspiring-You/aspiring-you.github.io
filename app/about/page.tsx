@@ -46,7 +46,7 @@ const team = [
 ];
 
 const milestones = [
-  { year: "2019", event: "Founded in a Bengaluru co-working space with 3 courses and 200 learners." },
+  { year: "2019", event: "Founded in a Coimbatore co-working space with 3 courses and 200 learners." },
   { year: "2020", event: "Launched live mentorship model; grew to 5,000 learners during the pandemic." },
   { year: "2021", event: "Raised seed funding; expanded to 20 courses and launched placement cell." },
   { year: "2022", event: "Crossed 20,000 graduates; opened corporate training division." },
@@ -78,16 +78,16 @@ export default function AboutPage() {
         }} />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className="section-badge" style={{ background: "rgba(255,255,255,0.08)", color: "#a5b4fc", borderColor: "rgba(165,180,252,0.25)", margin: "0 auto 1.25rem" }}>
-            Our Story
+            About Us
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#fff", marginBottom: "1.25rem" }}>
-            We Believe Every Aspiring Professional<br />
+            About{" "}
             <span style={{ background: "linear-gradient(135deg, #a78bfa, #60a5fa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Deserves a Great Career
+              Aspiring You
             </span>
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.1rem", maxWidth: "580px", margin: "0 auto", lineHeight: 1.75 }}>
-            Aspiring You was born from a simple belief: world-class education should be accessible to everyone, not just a privileged few. We're on a mission to close the skills gap, one learner at a time.
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.25rem", fontWeight: 500, maxWidth: "680px", margin: "0 auto", lineHeight: 1.7 }}>
+            Empowering Learners with Practical Technology Skills
           </p>
         </div>
       </section>
@@ -123,23 +123,15 @@ export default function AboutPage() {
             <div>
               <div className="section-badge">Who We Are</div>
               <h2 className="section-title" style={{ marginBottom: "1.25rem" }}>
-                More Than an Ed-Tech Company—<br />
-                We&apos;re a Career Partner
+                Empowering Through Practical Learning
               </h2>
               <p style={{ color: "var(--text-muted)", fontSize: "0.98rem", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-                Aspiring You is an online learning platform headquartered in Bengaluru, India, with learners across 30+ countries. We combine structured curriculum, live mentorship from industry veterans, and personalized career support to create transformative learning journeys.
+                Aspiring You is a technology learning platform focused on helping students, graduates, and working professionals develop industry-relevant skills in software development, DevOps, cloud technologies, and mobile application development. Our goal is to provide structured, practical training that prepares learners for real-world technical challenges and career opportunities.
               </p>
               <p style={{ color: "var(--text-muted)", fontSize: "0.98rem", lineHeight: 1.75, marginBottom: "2rem" }}>
-                Unlike traditional EdTech companies, we don&apos;t just sell courses—we own your success. Our career team works with you from enrollment all the way to job offer negotiation.
+                In today's fast-changing technology landscape, employers seek professionals who can apply knowledge, solve problems, and work with modern tools and frameworks. At Aspiring You, we focus on bridging the gap between learning and implementation through hands-on projects, practical exercises, and industry-aligned training programs.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                {["Accredited by leading industry bodies", "ISO 9001:2015 certified quality processes", "NASSCOM EdTech Startup of the Year 2023"].map((pt) => (
-                  <div key={pt} style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "0.9rem" }}>
-                    <CheckCircle2 size={17} style={{ color: "#10b981", flexShrink: 0 }} />
-                    <span style={{ color: "var(--text-mid)" }}>{pt}</span>
-                  </div>
-                ))}
-              </div>
+
             </div>
             <div>
               <Image
@@ -249,43 +241,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section">
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <div className="section-badge">Our Journey</div>
-            <h2 className="section-title">Milestones That Shaped Us</h2>
-          </div>
-          <div style={{ maxWidth: "700px", margin: "0 auto", position: "relative" }}>
-            <div style={{
-              position: "absolute", left: "88px", top: 0, bottom: 0,
-              width: "2px",
-              background: "linear-gradient(to bottom, var(--primary), var(--accent-start))",
-            }} />
-            {milestones.map((m, i) => (
-              <div key={i} style={{ display: "flex", gap: "2rem", marginBottom: "2rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: "80px", flexShrink: 0, textAlign: "right",
-                  fontWeight: 800, color: "var(--primary)", fontSize: "0.95rem",
-                  paddingTop: "0.25rem",
-                }}>
-                  {m.year}
-                </div>
-                <div style={{
-                  width: "16px", height: "16px", borderRadius: "50%",
-                  background: "linear-gradient(135deg, var(--primary), var(--accent-start))",
-                  flexShrink: 0, marginTop: "0.35rem",
-                  boxShadow: "0 0 0 4px rgba(99,102,241,0.15)",
-                  zIndex: 1,
-                }} />
-                <div className="card" style={{ padding: "1.1rem 1.25rem", flex: 1 }}>
-                  <p style={{ color: "var(--text-mid)", fontSize: "0.92rem", lineHeight: 1.65 }}>{m.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section style={{ background: "linear-gradient(135deg, var(--primary), var(--accent-start))", padding: "5rem 0", textAlign: "center" }}>

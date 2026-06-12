@@ -18,7 +18,6 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Programs", href: "/programs" },
     { label: "Careers", href: "/about" },
     { label: "Blog", href: "/" },
     { label: "Contact", href: "/" },
@@ -137,7 +136,7 @@ export function Footer() {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                 <MapPin size={14} style={{ color: "var(--accent-mid)" }} />
-                <span>Bengaluru, India</span>
+                <span>Coimbatore, India</span>
               </div>
             </div>
             {/* Social Icons */}
