@@ -432,3 +432,59 @@ html.dark .nav-link { color: var(--text-mid); }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 3rem 0;
+  }
+  .section-sm {
+    padding: 2rem 0;
+  }
+
+  /* Typography */
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons */
+  .btn-lg {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* Cards */
+  .card:hover {
+    transform: none;
+  }
+  .course-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 0.875rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  /* Buttons – full width on very small screens */
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+}

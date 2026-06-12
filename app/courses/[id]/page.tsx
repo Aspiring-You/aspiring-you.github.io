@@ -118,7 +118,7 @@ export default async function CourseDetailPage({ params }: Props) {
             </div>
 
             {/* Right Column – Responsive Image with features list overlay */}
-            <div style={{ position: "relative" }}>
+            <div style={{ position: "relative" }} className="detail-hero-img">
               <div style={{ borderRadius: "20px", overflow: "hidden", boxShadow: "var(--shadow-xl)", border: "1px solid rgba(255,255,255,0.15)" }}>
                 <Image
                   src={course.image}
@@ -339,12 +339,16 @@ export default async function CourseDetailPage({ params }: Props) {
         }
         @media (max-width: 991px) {
           .detail-hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .detail-hero-img { display: none !important; }
           .stats-row-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .detail-body-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
         @media (max-width: 575px) {
-          .stats-row-grid { grid-template-columns: 1fr !important; }
+          .stats-row-grid { grid-template-columns: 1fr 1fr !important; }
           .grid-2-mobile { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 420px) {
+          .stats-row-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

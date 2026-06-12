@@ -96,6 +96,7 @@ export default function HomePage() {
           display: "flex",
           alignItems: "center",
         }}
+        className="hero-section"
       >
         {/* Background Gradients */}
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
@@ -145,7 +146,7 @@ export default function HomePage() {
               <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2.25rem", maxWidth: "560px" }}>
                 Aspiring You is a technology learning platform dedicated to helping students, graduates, and working professionals build practical skills for today's digital workforce.
               </p>
-              <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", marginBottom: "2.5rem" }}>
+              <div className="hero-btns" style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", marginBottom: "2.5rem" }}>
                 <Link href="/courses" className="btn btn-primary btn-lg">
                   Explore Courses <ArrowRight size={18} />
                 </Link>
@@ -154,7 +155,7 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Trust badges */}
-              <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
+              <div className="trust-badges" style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
                 {[
                   { icon: "⭐", label: "4.8/5 Rated" },
                   { icon: "💻", label: "Practical Focus" },
@@ -203,6 +204,12 @@ export default function HomePage() {
             .hero-grid { grid-template-columns: 1fr !important; }
             .hero-right { display: none !important; }
           }
+          @media (max-width: 768px) {
+            .hero-section { padding: 7rem 0 4rem !important; min-height: auto !important; }
+            .hero-btns { flex-direction: column !important; }
+            .hero-btns .btn { width: 100% !important; justify-content: center !important; }
+            .trust-badges { gap: 1.25rem !important; }
+          }
         `}</style>
       </section>
 
@@ -228,7 +235,7 @@ export default function HomePage() {
       {/* ===== EXPLORE COURSES ===== */}
       <section className="section" style={{ background: "var(--bg-light)" }}>
         <div className="container">
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
+          <div className="courses-header" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
             <div>
               <div className="section-badge">Explore Our Courses</div>
               <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>Structured Technical Courses</h2>
@@ -244,6 +251,11 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+        <style>{`
+          @media (max-width: 640px) {
+            .courses-header { align-items: flex-start !important; flex-direction: column !important; }
+          }
+        `}</style>
       </section>
 
       {/* ===== WHY CHOOSE US ===== */}
