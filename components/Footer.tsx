@@ -116,8 +116,14 @@ export function Footer() {
           
           {/* Brand Column */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-              <Image src="/ay_logo.png" alt="Aspiring You" width={36} height={36} style={{ objectFit: "contain" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1rem" }}>
+              <Image
+                src="/ay_icon_white.png"
+                alt="AY Academy Icon"
+                width={32}
+                height={32}
+                style={{ objectFit: "contain", height: "32px", width: "32px" }}
+              />
               <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: "1.1rem", color: "#fff" }}>
                 Aspiring You
               </span>

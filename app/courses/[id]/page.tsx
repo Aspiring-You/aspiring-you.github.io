@@ -185,7 +185,7 @@ export default async function CourseDetailPage({ params }: Props) {
                   Course Overview
                 </h2>
                 <p style={{ color: "var(--text-mid)", fontSize: "0.95rem", lineHeight: 1.75, margin: 0, whiteSpace: "pre-line" }}>
-                  {course.description}
+                  {course.overview}
                 </p>
               </div>
 

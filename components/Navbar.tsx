@@ -95,29 +95,26 @@ export function Navbar() {
         }}
         transition={{ type: "spring", stiffness: 220, damping: 28 }}
       >
-        <div style={{ display: "flex", alignItems: "center", height: "56px", justifyContent: "space-between", width: "100%" }}>
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 400, damping: 15 }}
-          >
-            <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none", flexShrink: 0 }}>
-              <Image src="/ay_logo.png" alt="Aspiring You" width={38} height={38} style={{ objectFit: "contain" }} priority />
-              <span style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "1.15rem",
-                background: "linear-gradient(135deg, var(--primary), var(--accent-start))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                letterSpacing: "-0.02em"
-              }}>
-                Aspiring You
-              </span>
-            </Link>
-          </motion.div>
+        <div style={{ display: "flex", alignItems: "center", height: "56px", width: "100%" }}>
+          {/* Logo — left side, flex:1 */}
+          <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            >
+              <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
+                <Image
+                  src={dark ? "/ay_academy_white.png" : "/ay_academy_black.png"}
+                  alt="AY Academy"
+                  width={160}
+                  height={44}
+                  style={{ objectFit: "contain", height: "58px", width: "auto" }}
+                  priority
+                />
+              </Link>
+            </motion.div>
+          </div>
 
           {/* Desktop Nav */}
           <nav style={{ display: "flex", alignItems: "center", gap: "0.5rem" }} className="hidden-mobile">
@@ -177,8 +174,8 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Actions */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          {/* Right Actions — right side, flex:1 */}
+          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "0.75rem" }}>
             {/* Theme Toggle */}
             <motion.button
               whileHover={{ scale: 1.05 }}
