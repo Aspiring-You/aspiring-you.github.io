@@ -6,12 +6,23 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Aspiring You – Accelerate Your Career with Expert-Led Courses",
+  title: "AY Academy – Accelerate Your Career with Expert-Led Courses",
   description:
-    "Aspiring You offers industry-leading online courses with live mentorship, placement support, and hands-on projects. Transform your career with us.",
-  keywords: ["online courses", "career growth", "mentorship", "placement support", "upskilling", "Aspiring You"],
+    "AY Academy offers industry-leading online courses with live mentorship, placement support, and hands-on projects. Transform your career with us.",
+  keywords: ["online courses", "career growth", "mentorship", "placement support", "upskilling", "AY Academy", "Aspiring You"],
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "android-chrome-192x192", url: "/android-chrome-192x192.png" },
+      { rel: "android-chrome-512x512", url: "/android-chrome-512x512.png" },
+    ],
+  },
   openGraph: {
-    title: "Aspiring You – Accelerate Your Career",
+    title: "AY Academy – Accelerate Your Career",
     description: "Industry-leading online courses with live mentorship and placement support.",
     type: "website",
     url: "https://aspiringyou.com",

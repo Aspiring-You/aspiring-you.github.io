@@ -11,6 +11,7 @@ export interface Course {
   students: number;
   price: number;
   originalPrice: number;
+  overview: string;
   level: string;
   image: string;
   badge?: string;
@@ -42,8 +43,10 @@ export const courses: Course[] = [
     rating: 4.8,
     reviews: 1420,
     students: 8500,
-    price: 14999,
+    price: 20000,
     originalPrice: 29999,
+    overview:
+      "This DevOps course is designed for beginners who want practical, hands-on training in Linux, Git, Docker, CI/CD, Terraform, Kubernetes, Monitoring, and Ansible. Learn real DevOps workflows used in production environments and build job-ready automation skills.",
     level: "Beginner",
     image: "/devops_beginner.png",
     badge: "New",
@@ -195,8 +198,10 @@ export const courses: Course[] = [
     rating: 4.8,
     reviews: 1540,
     students: 9800,
-    price: 19999,
+    price: 30000,
     originalPrice: 39999,
+    overview:
+      "The DevOps Intermediate Program is designed for professionals who already understand basic DevOps concepts and want to deepen their practical expertise. This program focuses on real operational scenarios such as automation scripting, CI/CD pipeline design, infrastructure management, container orchestration, and monitoring. Learners gain hands-on experience with industry tools used in modern software delivery environments.",
     level: "Intermediate",
     image: "/devops_intermediate.png",
     badge: "Trending",
@@ -334,8 +339,10 @@ export const courses: Course[] = [
     rating: 4.9,
     reviews: 1120,
     students: 5400,
-    price: 24999,
-    originalPrice: 49999,
+    price: 50000,
+    originalPrice: 69999,
+    overview:
+      "The DevOps Advanced Program is designed for professionals who want to understand how DevOps operates in real production environments. This program focuses on advanced Git workflows, CI/CD pipeline architecture, infrastructure management, Kubernetes deployments, monitoring strategies, and automation practices used by DevOps engineers in modern software teams.",
     level: "Advanced",
     image: "/devops_advanced.png",
     badge: "Best Seller",
@@ -472,6 +479,8 @@ export const courses: Course[] = [
     students: 12400,
     price: 29999,
     originalPrice: 59999,
+    overview:
+      "The Full Stack Java Developer Program is designed to train developers in building modern backend applications using Java, Spring Boot, and microservices architecture. The program also covers DevOps practices including CI/CD pipelines, containerization, and infrastructure automation. Through structured sessions and practical exercises, learners develop the technical skills required to build scalable applications and manage production environments.",
     level: "Beginner to Advanced",
     image: "/java_developer.png",
     badge: "Top Rated",
@@ -575,6 +584,8 @@ export const courses: Course[] = [
     students: 14200,
     price: 19999,
     originalPrice: 39999,
+    overview:
+      "The Python Developer Program is designed to help learners build strong programming foundations and develop real-world web applications using Python. The training progresses from core programming concepts to object-oriented development, web application development with Flask, database integration with MongoDB, and API creation. By the end of the program, learners will build and deploy complete applications.",
     level: "Beginner to Intermediate",
     image: "/python_developer.png",
     badge: "Popular",
@@ -681,6 +692,8 @@ export const courses: Course[] = [
     students: 7500,
     price: 24999,
     originalPrice: 49999,
+    overview:
+      "The Flutter Mobile App Development Program is designed to teach developers how to build modern cross-platform mobile applications using Flutter and the Dart programming language. The course covers UI development, state management, API integration, local storage, Firebase backend services, and mobile app deployment. By the end of the program, learners build and publish complete mobile applications.",
     level: "Beginner to Intermediate",
     image: "/flutter_developer.png",
     badge: "Trending",
