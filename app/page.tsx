@@ -144,7 +144,7 @@ export default function HomePage() {
                 Training
               </h1>
               <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2.25rem", maxWidth: "560px" }}>
-                Aspiring You is a technology learning platform dedicated to helping students, graduates, and working professionals build practical skills for today's digital workforce.
+                Aspiring You is a technology learning platform dedicated to helping students, graduates, and working professionals build practical skills for today&apos;s digital workforce.
               </p>
               <div className="hero-btns" style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", marginBottom: "2.5rem" }}>
                 <Link href="/courses" className="btn btn-primary btn-lg">
@@ -569,7 +569,7 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
         ))}
       </div>
       <p style={{ color: "var(--text-mid)", fontSize: "0.9rem", lineHeight: 1.65, marginBottom: "1.25rem" }}>
-        "{testimonial.content}"
+        &ldquo;{testimonial.content}&rdquo;
       </p>
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
         <Image

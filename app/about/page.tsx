@@ -129,7 +129,7 @@ export default function AboutPage() {
                 Aspiring You is a technology learning platform focused on helping students, graduates, and working professionals develop industry-relevant skills in software development, DevOps, cloud technologies, and mobile application development. Our goal is to provide structured, practical training that prepares learners for real-world technical challenges and career opportunities.
               </p>
               <p style={{ color: "var(--text-muted)", fontSize: "0.98rem", lineHeight: 1.75, marginBottom: "2rem" }}>
-                In today's fast-changing technology landscape, employers seek professionals who can apply knowledge, solve problems, and work with modern tools and frameworks. At Aspiring You, we focus on bridging the gap between learning and implementation through hands-on projects, practical exercises, and industry-aligned training programs.
+                In today&apos;s fast-changing technology landscape, employers seek professionals who can apply knowledge, solve problems, and work with modern tools and frameworks. At Aspiring You, we focus on bridging the gap between learning and implementation through hands-on projects, practical exercises, and industry-aligned training programs.
               </p>
 
             </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
             Join the Aspiring You Community
           </h2>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1rem", maxWidth: "500px", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-            50,000+ learners are already building better careers. It's your turn.
+            50,000+ learners are already building better careers. It&apos;s your turn.
           </p>
           <Link href="/courses" className="btn btn-white btn-lg">
             Explore Courses <ArrowRight size={18} />
