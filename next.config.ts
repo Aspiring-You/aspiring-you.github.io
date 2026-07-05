@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
 
+  // ─── Pin Turbopack root to this project (fixes high CPU from stray ~/package-lock.json) ───
+  turbopack: {
+    root: ".",
+  },
+
   // ─── No basePath needed for org/user pages (aspiring-you.github.io) ───
   // basePath: "",  // leave empty — site lives at root
 

@@ -5,8 +5,28 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us – Aspiring You",
-  description: "Learn about Aspiring You's mission to democratize quality education and career growth for every aspiring professional.",
+  title: "About Us – Our Mission, Team & Values",
+  description:
+    "Learn about AY Academy by Aspiring You – our mission to provide structured, practical tech training that prepares learners for real-world careers in DevOps, Software Development, and Cybersecurity.",
+  keywords: [
+    "about AY Academy", "Aspiring You", "tech education mission",
+    "online learning platform India", "career-focused training",
+  ],
+  openGraph: {
+    title: "About AY Academy – Our Mission & Team",
+    description:
+      "Discover how AY Academy is helping students and professionals build practical, industry-relevant tech skills.",
+    url: "https://aspiringyou.com/about/",
+  },
+  twitter: {
+    card: "summary",
+    title: "About AY Academy",
+    description:
+      "Learn about our mission to provide structured, practical tech training for career growth.",
+  },
+  alternates: {
+    canonical: "https://aspiringyou.com/about/",
+  },
 };
 
 const coreValues = [

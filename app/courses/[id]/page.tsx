@@ -10,13 +10,39 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+const BASE_URL = "https://aspiringyou.com";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const course = courses.find((c) => c.id === id);
   if (!course) return { title: "Course Not Found" };
+
+  const courseUrl = `${BASE_URL}/courses/${course.id}/`;
+
   return {
-    title: `${course.title} – Aspiring You`,
+    title: `${course.title} – Online Training | AY Academy`,
     description: course.description,
+    keywords: [
+      course.title, course.category, ...course.skills.slice(0, 6),
+      "online course", "certification", "hands-on training", "AY Academy",
+    ],
+    openGraph: {
+      title: `${course.title} – AY Academy`,
+      description: course.description,
+      url: courseUrl,
+      type: "website",
+      images: course.image.startsWith("http")
+        ? [{ url: course.image, alt: course.title }]
+        : [{ url: `${BASE_URL}${course.image}`, alt: course.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${course.title} – AY Academy`,
+      description: course.description,
+    },
+    alternates: {
+      canonical: courseUrl,
+    },
   };
 }
 
@@ -32,8 +58,68 @@ export default async function CourseDetailPage({ params }: Props) {
   const discount = Math.round((1 - course.price / course.originalPrice) * 100);
   const totalLessons = course.curriculum.reduce((acc, curr) => acc + curr.lessons.length, 0);
 
+  // JSON-LD Course structured data
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: course.description,
+    provider: {
+      "@type": "Organization",
+      name: "AY Academy",
+      url: BASE_URL,
+    },
+    url: `${BASE_URL}/courses/${course.id}/`,
+    coursePrerequisites: course.prerequisites.join(", "),
+    educationalLevel: course.level,
+    inLanguage: "en",
+    offers: {
+      "@type": "Offer",
+      price: course.price,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      category: "Paid",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: course.rating,
+      reviewCount: course.reviews,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Online",
+      duration: course.duration,
+    },
+  };
+
+  // JSON-LD FAQPage structured data (Google FAQ rich results)
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: course.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* Hero Section */}
       <section style={{
         background: "linear-gradient(135deg, #0d0e2c, #1a1b5e)",
