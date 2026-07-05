@@ -5,8 +5,29 @@ import { programs } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Programs & Institutions – Aspiring You",
-  description: "Explore Aspiring You's multi-domain programs, corporate upskilling, and AI fellowship—designed for transformative career outcomes.",
+  title: "Programs & Institutions – Career Accelerator, AI Fellowship & Corporate Upskilling",
+  description:
+    "Explore AY Academy's flagship programs: Tech Career Accelerator, AI & Data Fellowship, and Corporate Upskilling. Intensive, multi-domain programs designed for transformative career outcomes.",
+  keywords: [
+    "tech career accelerator", "AI fellowship", "corporate upskilling",
+    "intensive training program", "career transformation",
+    "data science fellowship", "team training", "AY Academy programs",
+  ],
+  openGraph: {
+    title: "Programs & Institutions – AY Academy",
+    description:
+      "Explore intensive career accelerator programs, AI fellowships, and corporate upskilling solutions.",
+    url: "https://aspiringyou.com/programs/",
+  },
+  twitter: {
+    card: "summary",
+    title: "Programs – AY Academy",
+    description:
+      "Career Accelerator, AI Fellowship & Corporate Upskilling programs designed for transformative outcomes.",
+  },
+  alternates: {
+    canonical: "https://aspiringyou.com/programs/",
+  },
 };
 
 const successStories = [
